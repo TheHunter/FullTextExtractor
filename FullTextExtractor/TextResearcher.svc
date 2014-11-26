@@ -1,0 +1,5 @@
+﻿<%@ ServiceHost Language="C#"
+    Debug="true"
+    Service="FullTextExtractor.ITextResearcher, FullTextExtractor"
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf"
+    CodeBehind="TextResearcher.svc.cs" %>

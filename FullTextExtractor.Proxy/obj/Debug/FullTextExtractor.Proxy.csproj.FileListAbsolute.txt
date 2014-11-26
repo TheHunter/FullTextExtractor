@@ -1,0 +1,5 @@
+C:\Users\Diego\Documents\Progetti\Net\HunterRepo\FullTextExtractor\FullTextExtractor.Proxy\bin\Debug\FullTextExtractor.Proxy.dll
+C:\Users\Diego\Documents\Progetti\Net\HunterRepo\FullTextExtractor\FullTextExtractor.Proxy\bin\Debug\FullTextExtractor.Proxy.pdb
+C:\Users\Diego\Documents\Progetti\Net\HunterRepo\FullTextExtractor\FullTextExtractor.Proxy\obj\Debug\FullTextExtractor.Proxy.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Documents\Progetti\Net\HunterRepo\FullTextExtractor\FullTextExtractor.Proxy\obj\Debug\FullTextExtractor.Proxy.dll
+C:\Users\Diego\Documents\Progetti\Net\HunterRepo\FullTextExtractor\FullTextExtractor.Proxy\obj\Debug\FullTextExtractor.Proxy.pdb

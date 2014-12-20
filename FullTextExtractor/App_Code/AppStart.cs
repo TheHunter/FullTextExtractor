@@ -4,7 +4,7 @@ using TikaOnDotNet;
 
 namespace FullTextExtractor
 {
-    public class AppStatr
+    public class AppStart
     {
         public static void AppInitialize()
         {

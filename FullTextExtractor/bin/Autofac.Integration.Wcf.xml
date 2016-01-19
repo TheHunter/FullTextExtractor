@@ -21,7 +21,7 @@
             the type to use for the service implementation.
             </param>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="rootLifetimeScope"/> or <paramref name="serviceData"/> is <see langword="null"/>.
+            Thrown if <paramref name="rootLifetimeScope" /> or <paramref name="serviceData" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacDependencyInjectionServiceBehavior.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
@@ -47,8 +47,8 @@
             <param name="serviceDescription">The service description.</param>
             <param name="serviceHostBase">The host that is currently being built.</param>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="serviceDescription"/> or
-            <paramref name="serviceHostBase"/> is <see langword="null"/>.
+            Thrown if <paramref name="serviceDescription" /> or
+            <paramref name="serviceHostBase" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="T:Autofac.Integration.Wcf.AutofacInstanceContext">
@@ -65,6 +65,33 @@
             (which contains the resolved service instance) is also disposed.
             </para>
             </remarks>
+        </member>
+        <member name="P:Autofac.Integration.Wcf.AutofacInstanceContext.Current">
+            <summary>
+            Gets the current <see cref="T:Autofac.Integration.Wcf.AutofacInstanceContext"/>
+            for the operation.
+            </summary>
+            <value>
+            The <see cref="T:Autofac.Integration.Wcf.AutofacInstanceContext"/> associated
+            with the current <see cref="T:System.ServiceModel.OperationContext"/> if
+            one exists; or <see langword="null" /> if there isn't one.
+            </value>
+            <remarks>
+            <para>
+            In a singleton service, there won't be a current <see cref="T:Autofac.Integration.Wcf.AutofacInstanceContext"/>
+            because singleton services are resolved at the time the service host begins
+            rather than on each operation.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Autofac.Integration.Wcf.AutofacInstanceContext.OperationLifetime">
+            <summary>
+            Gets the request/operation lifetime.
+            </summary>
+            <value>
+            An <see cref="T:Autofac.ILifetimeScope"/> that this instance
+            context will use to resolve service instances.
+            </value>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacInstanceContext.#ctor(Autofac.ILifetimeScope)">
             <summary>
@@ -107,11 +134,16 @@
             Handles disposal of managed and unmanaged resources.
             </summary>
             <param name="disposing">
-            <see langword="true"/> to dispose of managed resources (during a manual execution
+            <see langword="true" /> to dispose of managed resources (during a manual execution
             of <see cref="M:Autofac.Integration.Wcf.AutofacInstanceContext.Dispose"/>); or
-            <see langword="false"/> if this is getting run as part of finalization where
+            <see langword="false" /> if this is getting run as part of finalization where
             managed resources may have already been cleaned up.
             </param>
+        </member>
+        <member name="P:Autofac.Integration.Wcf.AutofacInstanceContext.ComponentRegistry">
+            <summary>
+            Associates services with the components that provide them.
+            </summary>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacInstanceContext.ResolveComponent(Autofac.Core.IComponentRegistration,System.Collections.Generic.IEnumerable{Autofac.Core.Parameter})">
             <summary>
@@ -135,40 +167,8 @@
             </param>
             <returns>The service instance.</returns>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="serviceData"/> is <see langword="null"/>.
+            Thrown if <paramref name="serviceData" /> is <see langword="null" />.
             </exception>
-        </member>
-        <member name="P:Autofac.Integration.Wcf.AutofacInstanceContext.Current">
-            <summary>
-            Gets the current <see cref="T:Autofac.Integration.Wcf.AutofacInstanceContext"/>
-            for the operation.
-            </summary>
-            <value>
-            The <see cref="T:Autofac.Integration.Wcf.AutofacInstanceContext"/> associated
-            with the current <see cref="T:System.ServiceModel.OperationContext"/> if
-            one exists; or <see langword="null"/> if there isn't one.
-            </value>
-            <remarks>
-            <para>
-            In a singleton service, there won't be a current <see cref="T:Autofac.Integration.Wcf.AutofacInstanceContext"/>
-            because singleton services are resolved at the time the service host begins
-            rather than on each operation.
-            </para>
-            </remarks>
-        </member>
-        <member name="P:Autofac.Integration.Wcf.AutofacInstanceContext.OperationLifetime">
-            <summary>
-            Gets the request/operation lifetime.
-            </summary>
-            <value>
-            An <see cref="T:Autofac.ILifetimeScope"/> that this instance
-            context will use to resolve service instances.
-            </value>
-        </member>
-        <member name="P:Autofac.Integration.Wcf.AutofacInstanceContext.ComponentRegistry">
-            <summary>
-            Associates services with the components that provide them.
-            </summary>
         </member>
         <member name="T:Autofac.Integration.Wcf.AutofacInstanceProvider">
             <summary>
@@ -187,7 +187,7 @@
             implementation instance.
             </param>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="rootLifetimeScope"/> or <paramref name="serviceData"/> is <see langword="null"/>.
+            Thrown if <paramref name="rootLifetimeScope" /> or <paramref name="serviceData" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacInstanceProvider.GetInstance(System.ServiceModel.InstanceContext)">
@@ -205,7 +205,7 @@
             <param name="message">The message that triggered the creation of a service object.</param>
             <returns>The service object.</returns>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="instanceContext"/> is <see langword="null"/>.
+            Thrown if <paramref name="instanceContext" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacInstanceProvider.ReleaseInstance(System.ServiceModel.InstanceContext,System.Object)">
@@ -215,107 +215,13 @@
             <param name="instanceContext">The service's instance context.</param>
             <param name="instance">The service object to be recycled.</param>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="instanceContext"/> is <see langword="null"/>.
+            Thrown if <paramref name="instanceContext" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="T:Autofac.Integration.Wcf.AutofacServiceHostFactory">
             <summary>
             Creates <see cref="T:System.ServiceModel.ServiceHost"/> instances for WCF.
             </summary>
-        </member>
-        <member name="T:Autofac.Integration.Wcf.AutofacHostFactory">
-            <summary>
-            Creates service host instances for WCF.
-            </summary>
-            <remarks>
-            <para>
-            The Autofac service host factory allows you to change
-            the strategy by which service implementations are resolved. You do this by
-            setting the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.ServiceImplementationDataProvider"/>
-            with a strategy implementation.
-            </para>
-            <para>
-            If <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.ServiceImplementationDataProvider"/>
-            is <see langword="null"/> a new instance of <see cref="T:Autofac.Integration.Wcf.DefaultServiceImplementationDataProvider"/>
-            will be used.
-            </para>
-            <para>
-            You may configure additional behaviors or other aspects of generated
-            service instances by setting the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.HostConfigurationAction"/>.
-            If this value is not <see langword="null"/>, generated host instances
-            will be run through that action.
-            </para>
-            </remarks>
-        </member>
-        <member name="M:Autofac.Integration.Wcf.AutofacHostFactory.CreateServiceHost(System.String,System.Uri[])">
-            <summary>
-            Creates a <see cref="T:System.ServiceModel.ServiceHost"/> with specific base addresses and initializes it with specified data.
-            </summary>
-            <param name="constructorString">The initialization data passed to the <see cref="T:System.ServiceModel.ServiceHostBase"/> instance being constructed by the factory.</param>
-            <param name="baseAddresses">The <see cref="T:System.Array"/> of type <see cref="T:System.Uri"/> that contains the base addresses for the service hosted.</param>
-            <returns>
-            A <see cref="T:System.ServiceModel.ServiceHost"/> with specific base addresses.
-            </returns>
-            <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="constructorString"/> or <paramref name="baseAddresses"/> is <see langword="null"/>.
-            </exception>
-            <exception cref="T:System.ArgumentException">
-            Thrown if <paramref name="constructorString"/> is empty.
-            </exception>
-            <exception cref="T:System.InvalidOperationException">
-            Thrown if the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.Container"/>
-            is <see langword="null"/>.
-            </exception>
-            <remarks>
-            <para>
-            If <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.HostConfigurationAction"/>
-            is not <see langword="null"/>, the new service host instance is run
-            through the configuration action prior to being returned. This allows
-            you to programmatically configure behaviors or other aspects of the
-            host.
-            </para>
-            </remarks>
-        </member>
-        <member name="M:Autofac.Integration.Wcf.AutofacHostFactory.CreateSingletonServiceHost(System.Object,System.Uri[])">
-            <summary>
-            Creates a <see cref="T:System.ServiceModel.ServiceHost"/> for a specified type of service with a specific base address.
-            </summary>
-            <param name="singletonInstance">Specifies the singleton service instance to host.</param>
-            <param name="baseAddresses">The <see cref="T:System.Array"/> of type <see cref="T:System.Uri"/> that contains the base addresses for the service hosted.</param>
-            <returns>
-            A <see cref="T:System.ServiceModel.ServiceHost"/> for the singleton service instance specified with a specific base address.
-            </returns>
-        </member>
-        <member name="P:Autofac.Integration.Wcf.AutofacHostFactory.Container">
-            <summary>
-            Gets or sets the container or lifetime scope from which service instances will be retrieved.
-            </summary>
-            <value>
-            An <see cref="T:Autofac.ILifetimeScope"/> that will be used to resolve service
-            implementation instances.
-            </value>
-        </member>
-        <member name="P:Autofac.Integration.Wcf.AutofacHostFactory.HostConfigurationAction">
-            <summary>
-            Gets or sets an action that can be used to programmatically configure
-            service host instances this factory generates.
-            </summary>
-            <value>
-            An <see cref="T:System.Action`1"/> that can be used to configure service host
-            instances that this factory creates. This action can be used to add
-            behaviors or otherwise modify the host before it gets returned by
-            the factory.
-            </value>
-        </member>
-        <member name="P:Autofac.Integration.Wcf.AutofacHostFactory.ServiceImplementationDataProvider">
-            <summary>
-            Gets or sets the service implementation data strategy.
-            </summary>
-            <value>
-            An <see cref="T:Autofac.Integration.Wcf.IServiceImplementationDataProvider"/>
-            that will be used to determine the proper service implementation given
-            a service constructor string.
-            </value>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacServiceHostFactory.CreateServiceHost(System.Type,System.Uri[])">
             <summary>
@@ -327,7 +233,7 @@
             A <see cref="T:System.ServiceModel.ServiceHost"/> for the type of service specified with a specific base address.
             </returns>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="serviceType"/> or <paramref name="baseAddresses"/> is <see langword="null"/>.
+            Thrown if <paramref name="serviceType" /> or <paramref name="baseAddresses" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacServiceHostFactory.CreateSingletonServiceHost(System.Object,System.Uri[])">
@@ -401,7 +307,7 @@
             A <see cref="T:System.ServiceModel.Web.WebServiceHost"/> for the type of service specified with a specific base address.
             </returns>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="serviceType"/> or <paramref name="baseAddresses"/> is <see langword="null"/>.
+            Thrown if <paramref name="serviceType" /> or <paramref name="baseAddresses" /> is <see langword="null" />.
             </exception>
         </member>
         <member name="M:Autofac.Integration.Wcf.AutofacWebServiceHostFactory.CreateSingletonServiceHost(System.Object,System.Uri[])">
@@ -414,32 +320,105 @@
             A <see cref="T:System.ServiceModel.Web.WebServiceHost"/> for the singleton service instance specified with a specific base address.
             </returns>
         </member>
+        <member name="T:Autofac.Integration.Wcf.AutofacHostFactory">
+            <summary>
+            Creates service host instances for WCF.
+            </summary>
+            <remarks>
+            <para>
+            The Autofac service host factory allows you to change
+            the strategy by which service implementations are resolved. You do this by
+            setting the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.ServiceImplementationDataProvider"/>
+            with a strategy implementation.
+            </para>
+            <para>
+            If <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.ServiceImplementationDataProvider"/>
+            is <see langword="null" /> a new instance of <see cref="T:Autofac.Integration.Wcf.DefaultServiceImplementationDataProvider"/>
+            will be used.
+            </para>
+            <para>
+            You may configure additional behaviors or other aspects of generated
+            service instances by setting the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.HostConfigurationAction"/>.
+            If this value is not <see langword="null" />, generated host instances
+            will be run through that action.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Autofac.Integration.Wcf.AutofacHostFactory.Container">
+            <summary>
+            Gets or sets the container or lifetime scope from which service instances will be retrieved.
+            </summary>
+            <value>
+            An <see cref="T:Autofac.ILifetimeScope"/> that will be used to resolve service
+            implementation instances.
+            </value>
+        </member>
+        <member name="P:Autofac.Integration.Wcf.AutofacHostFactory.HostConfigurationAction">
+            <summary>
+            Gets or sets an action that can be used to programmatically configure
+            service host instances this factory generates.
+            </summary>
+            <value>
+            An <see cref="T:System.Action`1"/> that can be used to configure service host
+            instances that this factory creates. This action can be used to add
+            behaviors or otherwise modify the host before it gets returned by
+            the factory.
+            </value>
+        </member>
+        <member name="P:Autofac.Integration.Wcf.AutofacHostFactory.ServiceImplementationDataProvider">
+            <summary>
+            Gets or sets the service implementation data strategy.
+            </summary>
+            <value>
+            An <see cref="T:Autofac.Integration.Wcf.IServiceImplementationDataProvider"/>
+            that will be used to determine the proper service implementation given
+            a service constructor string.
+            </value>
+        </member>
+        <member name="M:Autofac.Integration.Wcf.AutofacHostFactory.CreateServiceHost(System.String,System.Uri[])">
+            <summary>
+            Creates a <see cref="T:System.ServiceModel.ServiceHost"/> with specific base addresses and initializes it with specified data.
+            </summary>
+            <param name="constructorString">The initialization data passed to the <see cref="T:System.ServiceModel.ServiceHostBase"/> instance being constructed by the factory.</param>
+            <param name="baseAddresses">The <see cref="T:System.Array"/> of type <see cref="T:System.Uri"/> that contains the base addresses for the service hosted.</param>
+            <returns>
+            A <see cref="T:System.ServiceModel.ServiceHost"/> with specific base addresses.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="constructorString" /> or <paramref name="baseAddresses"/> is <see langword="null" />.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown if <paramref name="constructorString" /> is empty.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.Container"/>
+            is <see langword="null" />.
+            </exception>
+            <remarks>
+            <para>
+            If <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.HostConfigurationAction"/>
+            is not <see langword="null" />, the new service host instance is run
+            through the configuration action prior to being returned. This allows
+            you to programmatically configure behaviors or other aspects of the
+            host.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autofac.Integration.Wcf.AutofacHostFactory.CreateSingletonServiceHost(System.Object,System.Uri[])">
+            <summary>
+            Creates a <see cref="T:System.ServiceModel.ServiceHost"/> for a specified type of service with a specific base address.
+            </summary>
+            <param name="singletonInstance">Specifies the singleton service instance to host.</param>
+            <param name="baseAddresses">The <see cref="T:System.Array"/> of type <see cref="T:System.Uri"/> that contains the base addresses for the service hosted.</param>
+            <returns>
+            A <see cref="T:System.ServiceModel.ServiceHost"/> for the singleton service instance specified with a specific base address.
+            </returns>
+        </member>
         <member name="T:Autofac.Integration.Wcf.DefaultServiceImplementationDataProvider">
             <summary>
             Simple resolver for WCF service implementations. Allows for single-tenant
             handling of named or typed services.
             </summary>
-        </member>
-        <member name="T:Autofac.Integration.Wcf.IServiceImplementationDataProvider">
-            <summary>
-            Defines a strategy for resolving which service type should be
-            used for hosting vs. which type is the actual service implementation.
-            </summary>
-        </member>
-        <member name="M:Autofac.Integration.Wcf.IServiceImplementationDataProvider.GetServiceImplementationData(System.String)">
-            <summary>
-            Gets data about a service implementation.
-            </summary>
-            <param name="value">
-            The constructor string passed in to the service host factory
-            that is used to determine which type to host/use as a service
-            implementation.
-            </param>
-            <returns>
-            A <see cref="T:Autofac.Integration.Wcf.ServiceImplementationData"/>
-            object containing information about which type to use in
-            the service host and how to resolve the implementation.
-            </returns>
         </member>
         <member name="M:Autofac.Integration.Wcf.DefaultServiceImplementationDataProvider.GetServiceImplementationData(System.String)">
             <summary>
@@ -465,17 +444,38 @@
             </remarks>
             <exception cref="T:System.InvalidOperationException">
             Thrown if the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.Container"/>
-            is <see langword="null"/>;
-            if the service indicated by <paramref name="value"/>
+            is <see langword="null" />;
+            if the service indicated by <paramref name="value" />
             is not registered with the <see cref="P:Autofac.Integration.Wcf.AutofacHostFactory.Container"/>;
             or if the service is a singleton that isn't registered as a singleton.
             </exception>
             <exception cref="T:System.ArgumentNullException">
-            Thrown if <paramref name="value"/> is <see langword="null"/>.
+            Thrown if <paramref name="value" /> is <see langword="null" />.
             </exception>
             <exception cref="T:System.ArgumentException">
-            Thrown if <paramref name="value"/> is empty.
+            Thrown if <paramref name="value" /> is empty.
             </exception>
+        </member>
+        <member name="T:Autofac.Integration.Wcf.IServiceImplementationDataProvider">
+            <summary>
+            Defines a strategy for resolving which service type should be
+            used for hosting vs. which type is the actual service implementation.
+            </summary>
+        </member>
+        <member name="M:Autofac.Integration.Wcf.IServiceImplementationDataProvider.GetServiceImplementationData(System.String)">
+            <summary>
+            Gets data about a service implementation.
+            </summary>
+            <param name="value">
+            The constructor string passed in to the service host factory
+            that is used to determine which type to host/use as a service
+            implementation.
+            </param>
+            <returns>
+            A <see cref="T:Autofac.Integration.Wcf.ServiceImplementationData"/>
+            object containing information about which type to use in
+            the service host and how to resolve the implementation.
+            </returns>
         </member>
         <member name="T:Autofac.Integration.Wcf.Properties.Resources">
             <summary>

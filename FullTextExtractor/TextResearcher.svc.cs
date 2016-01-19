@@ -24,28 +24,51 @@ namespace FullTextExtractor
         {
             this.extractor = txtExtractor;
         }
-
-
+        
         public FullTextResult MakeFullTextResult(string uri)
         {
-            var res = this.extractor.Extract(new Uri(uri));
-            return new FullTextResult
+            try
             {
-                ContentType = res.ContentType,
-                Metadata = res.Metadata,
-                Text = res.Text
-            };
+                var res = this.extractor.Extract(new Uri(uri));
+                return new FullTextResult
+                {
+                    ContentType = res.ContentType,
+                    Metadata = res.Metadata,
+                    Text = res.Text,
+                    Status = StatusResult.Successfully
+                };
+            }
+            catch (Exception ex)
+            {
+                return new FullTextResult
+                {
+                    Status = StatusResult.Unsuccessfully,
+                    Error = ex
+                };
+            }
         }
 
         public FullTextResult MakeFullTextResult(byte[] data)
         {
-            var res = this.extractor.Extract(data);
-            return new FullTextResult
+            try
             {
-                ContentType = res.ContentType,
-                Metadata = res.Metadata,
-                Text = res.Text
-            };
+                var res = this.extractor.Extract(data);
+                return new FullTextResult
+                {
+                    ContentType = res.ContentType,
+                    Metadata = res.Metadata,
+                    Text = res.Text,
+                    Status = StatusResult.Successfully
+                };
+            }
+            catch (Exception ex)
+            {
+                return new FullTextResult
+                {
+                    Status = StatusResult.Unsuccessfully,
+                    Error = ex
+                };
+            }
         }
     }
 }

@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,90 +42,134 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
+    <Reference Include="Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Integration.Wcf">
-      <HintPath>..\packages\Autofac.Wcf.3.0.1\lib\net40\Autofac.Integration.Wcf.dll</HintPath>
+    <Reference Include="Autofac.Integration.Wcf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Wcf.4.0.0\lib\net45\Autofac.Integration.Wcf.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.AWT.WinForms">
+    <Reference Include="IKVM.AWT.WinForms, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.AWT.WinForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Beans">
+    <Reference Include="IKVM.OpenJDK.Beans, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Charsets">
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Corba">
+    <Reference Include="IKVM.OpenJDK.Corba, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Core">
+    <Reference Include="IKVM.OpenJDK.Core, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Jdbc">
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Management">
+    <Reference Include="IKVM.OpenJDK.Management, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Management.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Media">
+    <Reference Include="IKVM.OpenJDK.Media, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Media.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Misc">
+    <Reference Include="IKVM.OpenJDK.Misc, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Naming">
+    <Reference Include="IKVM.OpenJDK.Naming, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Remoting">
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Security">
+    <Reference Include="IKVM.OpenJDK.Security, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Security.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.SwingAWT">
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Text">
+    <Reference Include="IKVM.OpenJDK.Text, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Text.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Tools">
+    <Reference Include="IKVM.OpenJDK.Tools, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Tools.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Util">
+    <Reference Include="IKVM.OpenJDK.Util, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.Util.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.API">
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.Bind">
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.Crypto">
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.Parse">
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.Transform">
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.WebServices">
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.XPath">
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.Runtime">
+    <Reference Include="IKVM.Runtime, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.Runtime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="IKVM.Runtime.JNI">
+    <Reference Include="IKVM.Runtime.JNI, Version=7.4.5196.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.7.4.5196.0\lib\IKVM.Runtime.JNI.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Roslyn.Compilers, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScriptingCompiler.1.0.0.1\lib\net45\Roslyn.Compilers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.CSharp, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScriptingCompiler.1.0.0.1\lib\net45\Roslyn.Compilers.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.VisualBasic, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScriptingCompiler.1.0.0.1\lib\net45\Roslyn.Compilers.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ScriptingCompiler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScriptingCompiler.1.0.0.1\lib\net45\ScriptingCompiler.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -143,22 +188,25 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="tika-app">
-      <HintPath>..\packages\TikaOnDotNet.1.6.3\lib\net35\tika-app.dll</HintPath>
+    <Reference Include="tika-app, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TikaOnDotNet.1.7.0\lib\net35\tika-app.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="TikaOnDotNet">
-      <HintPath>..\packages\TikaOnDotNet.1.6.3\lib\net35\TikaOnDotNet.dll</HintPath>
+    <Reference Include="TikaOnDotNet, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TikaOnDotNet.1.7.0\lib\net35\TikaOnDotNet.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WcfExtensions">
-      <HintPath>..\packages\WcfConfigExtensions.1.0.0.10\lib\net40\WcfExtensions.dll</HintPath>
+    <Reference Include="WcfExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WcfConfigExtensions.1.2.1.10\lib\net45\WcfExtensions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WcfJsonFormatter, Version=1.2.2.10, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WcfJsonFormatter.1.2.2.10\lib\net40\WcfJsonFormatter.dll</HintPath>
+      <HintPath>..\packages\WcfJsonFormatter.1.3.2.10\lib\net45\WcfJsonFormatter.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WcfJsonNetFormatter, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WcfJsonNetFormatter.1.1.0.5\lib\net40\WcfJsonNetFormatter.dll</HintPath>
+      <HintPath>..\packages\WcfJsonNetFormatter.1.3.6.5\lib\net45\WcfJsonNetFormatter.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +216,7 @@
   <ItemGroup>
     <Content Include="App_Code\AppStart.cs" />
     <Compile Include="FullTextResult.cs" />
+    <Compile Include="StatusResult.cs" />
     <Compile Include="TextResearcher.svc.cs">
       <DependentUpon>TextResearcher.svc</DependentUpon>
     </Compile>
@@ -178,7 +227,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="WcfServiceTypeSchema.xsd">
       <SubType>Designer</SubType>
     </None>
